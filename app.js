@@ -7,11 +7,12 @@ const app = express()
 app.use(express.json()) //to use body from post request
 
 
+let PORT = process.env.PORT || 9000
 //dbConnection
 let db
 connectToDb( err => {
     if(!err) {
-        app.listen(9000, (req, res) => {
+        app.listen(PORT, (req, res) => {
             console.log("server started at port no: 9000")
         })
         db = getDb()
