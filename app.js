@@ -1,9 +1,11 @@
 const express = require('express')
 const { connectToDb, getDb } = require('./db')
 const { ObjectId } = require('mongodb')
+const cors = require('cors')
 
 //app initializing & middleware
 const app = express()
+app.use(cors()) //to allow other origin to access the endpoints
 app.use(express.json()) //to use body from post request
 
 
